@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韶华廿载·草长情长 - 北林草业科学01级20年重聚</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2E7D32', // 主色调-北林绿
+                        secondary: '#D4AF37', // 辅助色-金色
+                        tertiary: '#8D6E63', // 第三色-暖棕色
+                        light: '#F5F5F5', // 浅色背景
+                        dark: '#333333', // 深色文本
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['"Noto Serif SC"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .text-shadow-lg {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .animate-float {
+                animation: float 3s ease-in-out infinite;
+            }
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            .timeline-item {
+                @apply relative pl-8 pb-10;
+            }
+            .timeline-item:before {
+                content: '';
+                @apply absolute left-0 top-0 w-4 h-4 rounded-full bg-primary;
+            }
+            .timeline-item:after {
+                content: '';
+                @apply absolute left-1.5 top-4 w-0.5 h-full bg-gray-200;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-light scroll-smooth">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <nav class="bg-primary/90 text-white py-4 px-6 md:px-12">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/50/50?random=logo" alt="北林校徽" class="h-10 w-10 rounded-full mr-3">
+                    <div>
+                        <h1 class="text-xl font-bold">北林草业20年聚</h1>
+                        <p class="text-xs opacity-80">韶华廿载·草长情长</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-secondary transition-colors duration-300">首页</a>
+                    <a href="#schedule" class="hover:text-secondary transition-colors duration-300">活动日程</a>
+                    <a href="#registration" class="hover:text-secondary transition-colors duration-300">我要报名</a>
+                    <a href="#alumni" class="hover:text-secondary transition-colors duration-300">校友名录</a>
+                    <a href="#gallery" class="hover:text-secondary transition-colors duration-300">照片墙</a>
+                    <a href="#message" class="hover:text-secondary transition-colors duration-300">留言板</a>
+                    <a href="#about" class="hover:text-secondary transition-colors duration-300">关于我们</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fa fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden bg-primary/95 text-white md:hidden">
+            <div class="container mx-auto py-4 px-6 flex flex-col space-y-4">
+                <a href="#home" class="py-2 hover:text-secondary transition-colors duration-300">首页</a>
+                <a href="#schedule" class="py-2 hover:text-secondary transition-colors duration-300">活动日程</a>
+                <a href="#registration" class="py-2 hover:text-secondary transition-colors duration-300">我要报名</a>
+                <a href="#alumni" class="py-2 hover:text-secondary transition-colors duration-300">校友名录</a>
+                <a href="#gallery" class="py-2 hover:text-secondary transition-colors duration-300">照片墙</a>
+                <a href="#message" class="py-2 hover:text-secondary transition-colors duration-300">留言板</a>
+                <a href="#about" class="py-2 hover:text-secondary transition-colors duration-300">关于我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 倒计时区域 -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/1920/1080?random=forest" alt="北林校园秋景" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/50"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mb-6 text-shadow-lg">
+                韶华廿载·草长情长
+            </h1>
+            <p class="text-[clamp(1.2rem,3vw,1.8rem)] text-white mb-10 text-shadow">
+                北京林业大学草业科学01级同窗20年重聚
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-10">
+                <div class="bg-primary/80 text-white p-4 rounded-lg w-20 md:w-32">
+                    <div id="days" class="text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-sm">天</div>
+                </div>
+                <div class="bg-primary/80 text-white p-4 rounded-lg w-20 md:w-32">
+                    <div id="hours" class="text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-sm">时</div>
+                </div>
+                <div class="bg-primary/80 text-white p-4 rounded-lg w-20 md:w-32">
+                    <div id="minutes" class="text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-sm">分</div>
+                </div>
+                <div class="bg-primary/80 text-white p-4 rounded-lg w-20 md:w-32">
+                    <div id="seconds" class="text-2xl md:text-4xl font-bold">00</div>
+                    <div class="text-sm">秒</div>
+                </div>
+            </div>
+            <a href="#registration" class="inline-block bg-secondary hover:bg-secondary/80 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 animate-float">
+                立即报名 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <a href="#schedule" class="flex flex-col items-center">
+                <span class="mb-2">活动详情</span>
+                <i class="fa fa-angle-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 活动日程 -->
+    <section id="schedule" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">活动日程</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 第一天 -->
+                <div class="bg-light rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="bg-primary text-white p-6">
+                        <h3 class="text-xl font-bold">10月17日</h3>
+                        <p class="text-sm opacity-80">抵达日</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">14:00-20:00</div>
+                                <div class="text-primary font-medium mb-1">酒店入住</div>
+                                <p class="text-gray-600">北京林业大学国际交流中心办理入住手续</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">报到</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">18:00-21:00</div>
+                                <div class="text-primary font-medium mb-1">自由活动</div>
+                                <p class="text-gray-600">校园周边景点自由参观，回味学生时代</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">自由</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二天 -->
+                <div class="bg-light rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="bg-primary text-white p-6">
+                        <h3 class="text-xl font-bold">10月18日</h3>
+                        <p class="text-sm opacity-80">校园日</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">08:30-10:00</div>
+                                <div class="text-primary font-medium mb-1">签到仪式</div>
+                                <p class="text-gray-600">银杏大道签名留念、佩戴定制校徽、领取纪念手册</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800">经典</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">10:00-12:00</div>
+                                <div class="text-primary font-medium mb-1">校园巡礼打卡</div>
+                                <p class="text-gray-600">宿舍、教室、食堂寻访，创意姿势模仿毕业照</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">热门</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">12:00-13:30</div>
+                                <div class="text-primary font-medium mb-1">食堂怀旧午餐</div>
+                                <p class="text-gray-600">招牌红烧肉重温、特色面食风味、学生时代饮品畅饮</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">感动</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">14:00-17:00</div>
+                                <div class="text-primary font-medium mb-1">沉浸式课堂</div>
+                                <p class="text-gray-600">恩师"特别一课"、校友职场故事分享、人生经验交流</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">专业</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">17:00-18:30</div>
+                                <div class="text-primary font-medium mb-1">班级文化展</div>
+                                <p class="text-gray-600">老照片青春回顾展、寻找当年的你我他、"时光信箱"寄语未来</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">经典</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">19:00-21:00</div>
+                                <div class="text-primary font-medium mb-1">怀旧运动会</div>
+                                <p class="text-gray-600">拔河、接力赛、跳大绳，团队竞技展风采</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">高潮</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">21:30-23:00</div>
+                                <div class="text-primary font-medium mb-1">露天草坪音乐会</div>
+                                <p class="text-gray-600">校园民谣大合唱、青春影像回放、星光下畅聊叙旧</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800">感动</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第三天 -->
+                <div class="bg-light rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="bg-primary text-white p-6">
+                        <h3 class="text-xl font-bold">10月19日</h3>
+                        <p class="text-sm opacity-80">自然探索日</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">08:00-09:00</div>
+                                <div class="text-primary font-medium mb-1">集合出发</div>
+                                <p class="text-gray-600">乘坐大巴前往鹫峰国家森林公园</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">交通</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">09:30-12:00</div>
+                                <div class="text-primary font-medium mb-1">自然探索之旅</div>
+                                <p class="text-gray-600">专业导游全程讲解，秋日自然风光欣赏</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">健康</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">12:00-13:30</div>
+                                <div class="text-primary font-medium mb-1">山林美食宴</div>
+                                <p class="text-gray-600">特色农家美食自助、纯天然绿色食材</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">美食</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">14:00-16:30</div>
+                                <div class="text-primary font-medium mb-1">自然创意工坊</div>
+                                <p class="text-gray-600">秋叶树枝创作、团队协作艺术制作、专属纪念品制作</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800">创意</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">16:30-17:30</div>
+                                <div class="text-primary font-medium mb-1">山顶茶话会</div>
+                                <p class="text-gray-600">20年人生故事分享、未来生活展望、放飞祝福纸飞机</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">感动</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">18:00-19:30</div>
+                                <div class="text-primary font-medium mb-1">结业仪式</div>
+                                <p class="text-gray-600">颁发"20周年重返校园证书"、活动集锦视频首映</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">高潮</span>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="font-bold text-lg mb-1">20:00</div>
+                                <div class="text-primary font-medium mb-1">返程</div>
+                                <p class="text-gray-600">乘坐大巴返回市区，结束难忘的20年重聚之旅</p>
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800">结束</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#registration" class="inline-block bg-primary hover:bg-primary/80 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                    我要报名 <i class="fa fa-pencil ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 报名系统 -->
+    <section id="registration" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">我要报名</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-3xl mx-auto">填写以下信息完成聚会报名，期待与你相聚！</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <form id="registration-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">姓名 <span class="text-red-500">*</span></label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+                        </div>
+                        <div>
+                            <label for="gender" class="block text-gray-700 font-medium mb-2">性别 <span class="text-red-500">*</span></label>
+                            <select id="gender" name="gender" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+                                <option value="">请选择</option>
+                                <option value="male">男</option>
+                                <option value="female">女</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="graduation-year" class="block text-gray-700 font-medium mb-2">毕业年份 <span class="text-red-500">*</span></label>
+                            <input type="number" id="graduation-year" name="graduation-year" min="2001" max="2005" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="例如：2005" required>
+                        </div>
+                        <div>
+                            <label for="major" class="block text-gray-700 font-medium mb-2">专业 <span class="text-red-500">*</span></label>
+                            <input type="text" id="major" name="major" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="例如：草业科学" required>
+                        </div>
+                        <div>
+                            <label for="city" class="block text-gray-700 font-medium mb-2">现居城市 <span class="text-red-500">*</span></label>
+                            <input type="text" id="city" name="city" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">手机号码 <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">电子邮箱 <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+                        </div>
+                        <div>
+                            <label for="job" class="block text-gray-700 font-medium mb-2">工作单位</label>
+                            <input type="text" id="job" name="job" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="accommodation" class="block text-gray-700 font-medium mb-2">住宿需求</label>
+                        <div class="space-y-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="accommodation" value="yes" class="form-radio h-5 w-5 text-primary">
+                                <span class="ml-2">需要安排住宿（10月17日-10月18日，双人标准间）</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="accommodation" value="no" class="form-radio h-5 w-5 text-primary">
+                                <span class="ml-2">不需要安排住宿</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="special-request" class="block text-gray-700 font-medium mb-2">特殊需求（如饮食禁忌等）</label>
+                        <textarea id="special-request" name="special-request" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-primary hover:bg-primary/80 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                            提交报名信息 <i class="fa fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 校友名录 -->
+    <section id="alumni" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">校友名录</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-3xl mx-auto">看看都有哪些同学参加聚会，提前联络感情！</p>
+            </div>
+
+            <div class="flex justify-center mb-8">
+                <div class="relative">
+                    <input type="text" id="alumni-search" placeholder="搜索校友姓名、城市或工作单位..." class="w-full md:w-96 px-4 py-2 pl-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/50">
+                    <i class="fa fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="alumni-list">
+                <!-- 校友卡片示例 -->
+                <div class="bg-light rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/300/300?random=1" alt="校友照片" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-4">
+                            <h3 class="text-white font-bold text-xl">张三</h3>
+                            <p class="text-white/80">北京</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-briefcase text-primary mr-2"></i>
+                            <span>中国林业科学研究院</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-envelope text-primary mr-2"></i>
+                            <span>zhangsan@example.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-2"></i>
+                            <span>138****1234</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/300/300?random=2" alt="校友照片" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-4">
+                            <h3 class="text-white font-bold text-xl">李四</h3>
+                            <p class="text-white/80">上海</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-briefcase text-primary mr-2"></i>
+                            <span>上海园林科学规划研究院</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-envelope text-primary mr-2"></i>
+                            <span>lisi@example.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-2"></i>
+                            <span>139****5678</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/300/300?random=3" alt="校友照片" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-4">
+                            <h3 class="text-white font-bold text-xl">王五</h3>
+                            <p class="text-white/80">广州</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-briefcase text-primary mr-2"></i>
+                            <span>华南农业大学</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-envelope text-primary mr-2"></i>
+                            <span>wangwu@example.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-2"></i>
+                            <span>136****9012</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/300/300?random=4" alt="校友照片" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-4">
+                            <h3 class="text-white font-bold text-xl">赵六</h3>
+                            <p class="text-white/80">成都</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-briefcase text-primary mr-2"></i>
+                            <span>四川省草原科学研究院</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fa fa-envelope text-primary mr-2"></i>
+                            <span>zhaoliu@example.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-2"></i>
+                            <span>137****3456</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button id="load-more-alumni" class="bg-primary hover:bg-primary/80 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                    加载更多校友 <i class="fa fa-refresh ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 照片墙 -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">照片墙</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-3xl mx-auto">重温青春记忆，分享校园时光</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="photo-gallery">
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=10" alt="北林校园" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">北林校园</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=11" alt="草业科学专业合影" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">专业合影</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=12" alt="实验室时光" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">实验室时光</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=13" alt="校园活动" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">校园活动</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=14" alt="课堂瞬间" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">课堂瞬间</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=15" alt="宿舍生活" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">宿舍生活</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=16" alt="校园风景" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">校园风景</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://picsum.photos/600/600?random=17" alt="毕业留念" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">毕业留念</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button id="load-more-photos" class="bg-primary hover:bg-primary/80 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                    查看更多照片 <i class="fa fa-image ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 留言板 -->
+    <section id="message" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">留言板</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-3xl mx-auto">写下你对聚会的期待，或是想对同学们说的话</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-light rounded-xl shadow-lg p-6 mb-10">
+                    <h3 class="text-xl font-bold mb-4">我要留言</h3>
+                    <form id="message-form" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="message-name" class="block text-gray-700 font-medium mb-1">姓名 <span class="text-red-500">*</span></label>
+                                <input type="text" id="message-name" name="message-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+                            </div>
+                            <div>
+                                <label for="message-email" class="block text-gray-700 font-medium mb-1">电子邮箱</label>
+                                <input type="email" id="message-email" name="message-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message-content" class="block text-gray-700 font-medium mb-1">留言内容 <span class="text-red-500">*</span></label>
+                            <textarea id="message-content" name="message-content" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50" required></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="bg-primary hover:bg-primary/80 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                发布留言 <i class="fa fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="messages-container">
+                    <!-- 留言示例 -->
+                    <div class="bg-light rounded-xl shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/60/60?random=20" alt="校友头像" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-lg">张小明</h4>
+                                    <p class="text-gray-500 text-sm">2025年7月15日</p>
+                                </div>
+                            </div>
+                            <div class="text-primary">
+                                <i class="fa fa-thumbs-up cursor-pointer hover:text-secondary transition-colors duration-300"></i>
+                                <span class="ml-1">12</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">时光飞逝，转眼间毕业已经20年了。非常期待这次聚会，想看看老同学们现在都过得怎么样，也想再次回到母校，重温我们的青春岁月。</p>
+                    </div>
+
+                    <div class="bg-light rounded-xl shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/60/60?random=21" alt="校友头像" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-lg">李华</h4>
+                                    <p class="text-gray-500 text-sm">2025年7月12日</p>
+                                </div>
+                            </div>
+                            <div class="text-primary">
+                                <i class="fa fa-thumbs-up cursor-pointer hover:text-secondary transition-colors duration-300"></i>
+                                <span class="ml-1">8</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">20年的时间，改变了我们的容颜，但改变不了我们的同学情谊。期待与大家相聚，共同回忆我们的大学生活，也希望这次聚会能够圆满成功！</p>
+                    </div>
+
+                    <div class="bg-light rounded-xl shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/60/60?random=22" alt="校友头像" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-lg">王芳</h4>
+                                    <p class="text-gray-500 text-sm">2025年7月10日</p>
+                                </div>
+                            </div>
+                            <div class="text-primary">
+                                <i class="fa fa-thumbs-up cursor-pointer hover:text-secondary transition-colors duration-300"></i>
+                                <span class="ml-1">15</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">看到聚会的消息非常激动，已经开始期待和大家见面了！希望这次聚会能够安排一些时间，让我们好好聊聊这些年的经历和故事。</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <button id="load-more-messages" class="bg-primary hover:bg-primary/80 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                        查看更多留言 <i class="fa fa-comments ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">关于我们</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-primary">聚会组委会</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/80/80?random=30" alt="组委会成员" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-lg">陈主任</h4>
+                                <p class="text-gray-600">总策划</p>
+                                <p class="text-gray-500 text-sm">电话：139****8765 | 邮箱：chen@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/80/80?random=31" alt="组委会成员" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-lg">刘老师</h4>
+                                <p class="text-gray-600">联络组组长</p>
+                                <p class="text-gray-500 text-sm">电话：138****7654 | 邮箱：liu@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/80/80?random=32" alt="组委会成员" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-lg">赵同学</h4>
+                                <p class="text-gray-600">宣传组组长</p>
+                                <p class="text-gray-500 text-sm">电话：137****6543 | 邮箱：zhao@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-6 mt-12 text-primary">北京林业大学草业科学专业</h3>
+                    <p class="text-gray-700 mb-4">
+                        北京林业大学草业科学专业始建于1952年，是我国最早开展草业科学教学与研究的专业之一。专业依托林学一流学科，拥有完善的教学科研平台，致力于培养具备草业科学基本理论、知识和技能，能在草业科学领域从事教学、科研、生产、管理等工作的高素质专门人才。
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        经过多年的发展，草业科学专业已形成了鲜明的学科特色和优势，在草坪科学与工程、牧草生物技术、草地生态与管理等领域取得了一系列重要成果，为我国草业发展和生态环境保护做出了重要贡献。
+                    </p>
+                    <p class="text-gray-700">
+                        专业现有教授10人，副教授15人，其中包括国家杰出青年基金获得者2人，国家优秀青年基金获得者3人。近年来，承担了国家重点研发计划、国家自然科学基金等国家级项目50余项，在国内外学术期刊发表论文500余篇，获国家和省部级科技奖励10余项。
+                    </p>
+                </div>
+
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                        <h3 class="text-xl font-bold mb-6 text-primary">联系我们</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">邮箱</h4>
+                                    <p class="text-gray-600">alumni@cy01.edu.cn</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">电话</h4>
+                                    <p class="text-gray-600">020-20251018</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa fa-weixin text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">微信公众号</h4>
+                                    <p class="text-gray-600">北林草业01级校友会</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa fa-map-marker text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">聚会地点</h4>
+                                    <p class="text-gray-600">北京林业大学国际交流中心</p>
+                                    <p class="text-gray-600">北京市海淀区清华东路35号</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-xl font-bold mb-6 text-primary">常见问题</h3>
+                        <div class="space-y-4">
+                            <div class="border-b border-gray-200 pb-4">
+                                <h4 class="font-bold text-lg mb-2">Q：聚会的费用是多少？</h4>
+                                <p class="text-gray-600">A：聚会费用每人1500元，包含住宿、餐饮、交通、活动组织等费用。具体费用明细会在聚会前公布。</p>
+                            </div>
+                            <div class="border-b border-gray-200 pb-4">
+                                <h4 class="font-bold text-lg mb-2">Q：如何报名参加聚会？</h4>
+                                <p class="text-gray-600">A：您可以通过本网站的"我要报名"页面填写相关信息完成报名，也可以通过微信公众号或组委会成员报名。</p>
+                            </div>
+                            <div class="border-b border-gray-200 pb-4">
+                                <h4 class="font-bold text-lg mb-2">Q：是否可以带家属参加？</h4>
+                                <p class="text-gray-600">A：欢迎携带家属参加，但需要在报名时注明，并缴纳相应的费用。家属费用为每人800元。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Q：住宿安排如何？</h4>
+                                <p class="text-gray-600">A：住宿统一安排在北京林业大学国际交流中心，双人标准间。如需单独住宿，请在报名时注明，补交房差。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/50/50?random=logo" alt="北林校徽" class="h-10 w-10 rounded-full mr-3">
+                        <div>
+                            <h3 class="text-xl font-bold">北林草业20年聚</h3>
+                            <p class="text-xs opacity-80">韶华廿载·草长情长</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        北京林业大学草业科学01级20年同学聚会官方网站
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fa fa-qq text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">首页</a></li>
+                        <li><a href="#schedule" class="text-gray-400 hover:text-white transition-colors duration-300">活动日程</a></li>
+                        <li><a href="#registration" class="text-gray-400 hover:text-white transition-colors duration-300">我要报名</a></li>
+                        <li><a href="#alumni" class="text-gray-400 hover:text-white transition-colors duration-300">校友名录</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors duration-300">照片墙</a></li>
+                        <li><a href="#message" class="text-gray-400 hover:text-white transition-colors duration-300">留言板</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">关于我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope-o mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">alumni@cy01.edu.cn</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">020-20251018</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-map-marker mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">北京市海淀区清华东路35号</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 北京林业大学草业科学01级20年同学聚会组委会 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary hover:bg-primary/80 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 opacity-0 translate-y-10">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- 图片查看器模态框 -->
+    <div id="image-viewer" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <button id="close-image-viewer" class="absolute top-6 right-6 text-white text-3xl">
+            <i class="fa fa-times"></i>
+        </button>
+        <img id="viewed-image" src="" alt="大图查看" class="max-w-[90%] max-h-[90vh]">
+    </div>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-primary');
+                navbar.classList.remove('bg-primary/90');
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('bg-primary');
+                navbar.classList.add('bg-primary/90');
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // 关闭移动菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // 倒计时功能
+        function updateCountdown() {
+            const targetDate = new Date('2025-10-18T08:30:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+
+        // 初始更新倒计时
+        updateCountdown();
+        // 每秒更新一次
+        setInterval(updateCountdown, 1000);
+
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'translate-y-10');
+                backToTopButton.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'translate-y-10');
+                backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 图片查看器
+        const imageViewer = document.getElementById('image-viewer');
+        const viewedImage = document.getElementById('viewed-image');
+        const closeImageViewer = document.getElementById('close-image-viewer');
+        const galleryImages = document.querySelectorAll('#photo-gallery img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                viewedImage.src = img.src.replace('/600/600', '/1200/1200');
+                imageViewer.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeImageViewer.addEventListener('click', () => {
+            imageViewer.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        });
+
+        // 点击模态框背景关闭
+        imageViewer.addEventListener('click', (e) => {
+            if (e.target === imageViewer) {
+                imageViewer.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // 表单提交处理
+        const registrationForm = document.getElementById('registration-form');
+        if (registrationForm) {
+            registrationForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // 这里可以添加表单验证和提交逻辑
+                alert('报名信息已提交成功！我们会尽快与您联系。');
+                registrationForm.reset();
+            });
+        }
+
+        const messageForm = document.getElementById('message-form');
+        if (messageForm) {
+            messageForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('message-name').value;
+                const content = document.getElementById('message-content').value;
+                const now = new Date();
+                const dateString = now.getFullYear() + '年' + (now.getMonth() + 1) + '月' + now.getDate() + '日';
+
+                // 创建新留言元素
+                const newMessage = document.createElement('div');
+                newMessage.className = 'bg-light rounded-xl shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg';
+                newMessage.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/60/60?random=${Math.floor(Math.random() * 100)}" alt="校友头像" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-lg">${name}</h4>
+                                <p class="text-gray-500 text-sm">${dateString}</p>
+                            </div>
+                        </div>
+                        <div class="text-primary">
+                            <i class="fa fa-thumbs-up cursor-pointer hover:text-secondary transition-colors duration-300"></i>
+                            <span class="ml-1">0</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">${content}</p>
+                `;
+
+                // 添加到留言列表顶部
+                const messagesContainer = document.getElementById('messages-container');
+                messagesContainer.insertBefore(newMessage, messagesContainer.firstChild);
+                
+                // 清空表单
+                messageForm.reset();
+                
+                // 显示成功提示
+                alert('留言发布成功！');
+            });
+        }
+
+        // 加载更多校友
+        const loadMoreAlumniButton = document.getElementById('load-more-alumni');
+        if (loadMoreAlumniButton) {
+            loadMoreAlumniButton.addEventListener('click', () => {
+                const alumniList = document.getElementById('alumni-list');
+                for (let i = 0; i < 4; i++) {
+                    const randomNum = Math.floor(Math.random() * 100);
+                    const cities = ['北京', '上海', '广州', '深圳', '成都', '杭州', '南京', '武汉', '西安', '重庆'];
+                    const jobs = ['中国林业科学研究院', '北京园林科学研究院', '上海植物园', '华南农业大学', '北京大学', '清华大学', '中国农业大学', '草业科技有限公司', '园林工程公司', '环境科学研究所'];
+                    
+                    const randomCity = cities[Math.floor(Math.random() * cities.length)];
+                    const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
+                    
+                    const newAlumniCard = document.createElement('div');
+                    newAlumniCard.className = 'bg-light rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2';
+                    newAlumniCard.innerHTML = `
+                        <div class="relative">
+                            <img src="https://picsum.photos/300/300?random=${randomNum}" alt="校友照片" class="w-full h-48 object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-4">
+                                <h3 class="text-white font-bold text-xl">校友${randomNum}</h3>
+                                <p class="text-white/80">${randomCity}</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-3">
+                                <i class="fa fa-briefcase text-primary mr-2"></i>
+                                <span>${randomJob}</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <i class="fa fa-envelope text-primary mr-2"></i>
+                                <span>alumni${randomNum}@example.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-phone text-primary mr-2"></i>
+                                <span>138****${Math.floor(Math.random() * 9000 + 1000)}</span>
+                            </div>
+                        </div>
+                    `;
+                    
+                    alumniList.appendChild(newAlumniCard);
+                }
+            });
+        }
+
+        // 加载更多照片
+        const loadMorePhotosButton = document.getElementById('load-more-photos');
+        if (loadMorePhotosButton) {
+            loadMorePhotosButton.addEventListener('click', () => {
+                const photoGallery = document.getElementById('photo-gallery');
+                const categories = ['北林校园', '专业活动', '实验室时光', '校园风景', '毕业留念', '班级活动', '社会实践', '校园建筑'];
+                
+                for (let i = 0; i < 4; i++) {
+                    const randomNum = Math.floor(Math.random() * 100) + 20;
+                    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+                    
+                    const newPhotoItem = document.createElement('div');
+                    newPhotoItem.className = 'relative group overflow-hidden rounded-lg cursor-pointer';
+                    newPhotoItem.innerHTML = `
+                        <img src="https://picsum.photos/600/600?random=${randomNum}" alt="${randomCategory}" class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold px-4 py-2 rounded-full bg-primary/80">${randomCategory}</span>
+                        </div>
+                    `;
+                    
+                    // 添加点击事件
+                    newPhotoItem.querySelector('img').addEventListener('click', (e) => {
+                        viewedImage.src = e.target.src.replace('/600/600', '/1200/1200');
+                        imageViewer.classList.remove('opacity-0', 'pointer-events-none');
+                        document.body.style.overflow = 'hidden';
+                    });
+                    
+                    photoGallery.appendChild(newPhotoItem);
+                }
+            });
+        }
+
+        // 加载更多留言
+        const loadMoreMessagesButton = document.getElementById('load-more-messages');
+        if (loadMoreMessagesButton) {
+            loadMoreMessagesButton.addEventListener('click', () => {
+                const messagesContainer = document.getElementById('messages-container');
+                const names = ['陈同学', '杨同学', '吴同学', '郑同学', '孙同学', '周同学', '徐同学', '马同学'];
+                const messages = [
+                    "20年过去了，不知道大家都变成什么样子了，真的很期待这次聚会！",
+                    "毕业20年，时间过得真快。希望这次聚会能让我们重温青春岁月，再续同学情谊。",
+                    "看到聚会的消息非常激动，已经开始准备了。期待与大家见面！",
+                    "很怀念大学时光，希望这次聚会能够圆满成功，让我们留下美好的回忆。",
+                    "20年的时间，改变了我们的容颜，但改变不了我们的同学情谊。",
+                    "期待与老朋友们相聚，分享这些年的生活和工作经历。",
+                    "不知道大家是否还记得我们一起在实验室做实验的日子，真的很怀念！",
+                    "希望这次聚会能够让我们重新联系起来，保持这份珍贵的同学情谊。"
+                ];
+                
+                for (let i = 0; i < 3; i++) {
+                    const randomName = names[Math.floor(Math.random() * names.length)];
+                    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                    const randomDate = new Date();
+                    randomDate.setDate(randomDate.getDate() - Math.floor(Math.random() * 30));
+                    const dateString = randomDate.getFullYear() + '年' + (randomDate.getMonth() + 1) + '月' + randomDate.getDate() + '日';
+                    
+                    const newMessage = document.createElement('div');
+                    newMessage.className = 'bg-light rounded-xl shadow-md p-6 mb-6 transform transition-all duration-300 hover:shadow-lg';
+                    newMessage.innerHTML = `
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/60/60?random=${Math.floor(Math.random() * 100) + 50}" alt="校友头像" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold text-lg">${randomName}</h4>
+                                    <p class="text-gray-500 text-sm">${dateString}</p>
+                                </div>
+                            </div>
+                            <div class="text-primary">
+                                <i class="fa fa-thumbs-up cursor-pointer hover:text-secondary transition-colors duration-300"></i>
+                                <span class="ml-1">${Math.floor(Math.random() * 20)}</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">${randomMessage}</p>
+                    `;
+                    
+                    messagesContainer.appendChild(newMessage);
+                }
+            });
+        }
+
+        // 校友搜索功能
+        const alumniSearch = document.getElementById('alumni-search');
+        if (alumniSearch) {
+            alumniSearch.addEventListener('input', () => {
+                const searchTerm = alumniSearch.value.toLowerCase();
+                const alumniCards = document.querySelectorAll('#alumni-list > div');
+                
+                alumniCards.forEach(card => {
+                    const name = card.querySelector('h3').textContent.toLowerCase();
+                    const city = card.querySelector('.text-white/80').textContent.toLowerCase();
+                    const job = card.querySelector('.fa-briefcase').nextElementSibling.textContent.toLowerCase();
+                    
+                    if (name.includes(searchTerm) || city.includes(searchTerm) || job.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
+    
